@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de cadastro da ONG Esperança para voluntariado, doações e participação em projetos sociais.">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>ONG Esperança - Cadastro</title>
+</head>
+<body>
+  <header>
+    <h1>ONG Esperança</h1>
+      <nav aria-label="Navegação principal">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu">
+        ☰
+        </button>
+
+        <ul class="menu-principal">
+          <li><a href="../html/index.html">Início</a></li>
+
+          <li class="item-dropdown">
+            <a href="../html/projetos.html">Projetos</a>
+            <ul class="submenu">
+              <li><a href="../html/projetos.html#campanhas-doacao">Doações</a></li>
+              <li><a href="../html/projetos.html#voluntariado">Voluntariado</a></li>
+              <li><a href="../html/projetos.html#como-participar">Como participar</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../html/cadastro.html">Cadastre-se</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <section aria-labelledby="cadastro-titulo">
+      <h2 id="cadastro-titulo">Cadastre-se para participar</h2>
+      <p>Preencha seus dados para demonstrar interesse em colaborar com a ONG Esperança.</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Dados pessoais</legend>
+          <p><label for="nome">Nome completo:</label><br>
+            <input type="text" id="nome" name="nome" required minlength="3" maxlength="100"></p>
+          <p><label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required></p>
+          <p><label for="nascimento">Data de nascimento:</label><br>
+            <input type="date" id="nascimento" name="nascimento" required></p>
+          <p><label for="cpf">CPF:</label><br>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
+              pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" required
+              title="Digite o CPF no formato 000.000.000-00"></p>
+        </fieldset>
+        <fieldset>
+          <legend>Contato e endereço</legend>
+          <p><label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+              pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" maxlength="15" required
+              title="Digite o telefone no formato (00) 00000-0000"></p>
+          <p><label for="cep">CEP:</label><br>
+            <input type="text" id="cep" name="cep" placeholder="00000-000"
+              pattern="[0-9]{5}-[0-9]{3}" maxlength="9" required
+              title="Digite o CEP no formato 00000-000"></p>
+          <p><label for="endereco">Endereço:</label><br>
+            <input type="text" id="endereco" name="endereco" maxlength="150" required></p>
+          <p><label for="cidade">Cidade:</label><br>
+            <input type="text" id="cidade" name="cidade" maxlength="80" required></p>
+          <p><label for="estado">Estado:</label><br>
+            <select id="estado" name="estado" required>
+              <option value="">Selecione</option>
+              <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+              <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+              <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+              <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+              <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+              <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+              <option>SP</option><option>SE</option><option>TO</option>
+            </select></p>
+        </fieldset>
+        <fieldset>
+          <legend>Forma de participação</legend>
+          <p><input type="radio" id="voluntario" name="participacao" value="voluntariado" required>
+            <label for="voluntario">Quero ser voluntário</label></p>
+          <p><input type="radio" id="doador" name="participacao" value="doacao">
+            <label for="doador">Quero contribuir com doações</label></p>
+          <p><input type="radio" id="ambos" name="participacao" value="ambos">
+            <label for="ambos">Tenho interesse nas duas opções</label></p>
+        </fieldset>
+        <fieldset>
+          <legend>Confirmação</legend>
+          <p>
+              <input
+                type="checkbox"
+                id="termos"
+                name="termos"
+                required
+              >
+              <label for="termos">
+                Concordo com o uso dos meus dados para
+                fins de contato da ONG.
+              </label>
+          </p>
+        </fieldset>
+        <p><button type="submit">Enviar cadastro</button>
+          <button type="reset">Limpar formulário</button></p>
+      </form>
+    </section>
+  </main>
+  <footer><p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p></footer>
+</body>
+</html>

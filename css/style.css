@@ -1,0 +1,541 @@
+/* ==============================
+   DESIGN SYSTEM - ONG ESPERANÇA
+   ============================== */
+
+:root {
+  /* Cores principais */
+  --cor-primaria: #c2185b;
+  --cor-primaria-escura: #880e4f;
+  --cor-secundaria: #f48fb1;
+  --cor-destaque: #ad1457;
+
+  /* Cores neutras */
+  --cor-fundo: #fff8fb;
+  --cor-fundo-claro: #ffffff;
+  --cor-texto: #333333;
+  --cor-texto-suave: #666666;
+  --cor-borda: #e0e0e0;
+  --cor-branco: #ffffff;
+
+  /* Tipografia */
+  --fonte-base: 1rem;
+  --fonte-pequena: 0.875rem;
+  --fonte-media: 1.125rem;
+  --fonte-titulo: 1.75rem;
+  --fonte-principal: 2.5rem;
+
+  /* Espaçamentos - escala modular */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-5: 1.5rem;
+  --espaco-6: 2rem;
+  --espaco-7: 3rem;
+  --espaco-8: 4rem;
+
+  /* Outros padrões */
+  --raio-borda: 10px;
+  --sombra: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--fonte-base);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: var(--espaco-5) var(--espaco-6);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 var(--espaco-3);
+  font-size: var(--fonte-principal);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaco-5);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--espaco-2) var(--espaco-3);
+  border-radius: var(--raio-borda);
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* ==============================
+   SUBMENU DROPDOWN
+   ============================== */
+
+.item-dropdown {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  padding: var(--espaco-2);
+  margin: 0;
+  background-color: var(--cor-primaria-escura);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra);
+  z-index: 10;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.item-dropdown:hover .submenu,
+.item-dropdown:focus-within .submenu {
+  display: flex;
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu a {
+  display: block;
+  width: 100%;
+}
+
+/* ==============================
+   MENU HAMBÚRGUER
+   ============================== */
+
+.menu-toggle {
+  display: none;
+  margin: 0 auto;
+  padding: var(--espaco-2) var(--espaco-3);
+  background-color: transparent;
+  color: var(--cor-branco);
+  font-size: 1.8rem;
+}
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-7) var(--espaco-5);
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--espaco-6);
+}
+
+section {
+  grid-column: 1 / -1;
+  background-color: var(--cor-fundo-claro);
+  margin-bottom: var(--espaco-6);
+  padding: var(--espaco-6);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra);
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--cor-primaria-escura);
+  font-size: var(--fonte-titulo);
+}
+
+section p {
+  font-size: var(--fonte-media);
+}
+
+figure {
+  margin: var(--espaco-5) 0;
+  text-align: center;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--raio-borda);
+}
+
+/* ==============================
+   LISTAS
+   ============================== */
+
+ul {
+  padding-left: var(--espaco-6);
+}
+
+li {
+  margin-bottom: var(--espaco-2);
+}
+
+/* ==============================
+   LINKS
+   ============================== */
+
+main a {
+  color: var(--cor-primaria-escura);
+  font-weight: bold;
+}
+
+main a:hover,
+main a:focus {
+  color: var(--cor-destaque);
+}
+
+/* ==============================
+   CONTATO
+   ============================== */
+
+address {
+  font-style: normal;
+  background-color: var(--cor-fundo);
+  padding: var(--espaco-5);
+  border-left: 4px solid var(--cor-secundaria);
+  border-radius: var(--raio-borda);
+}
+
+/* ==============================
+   FORMULÁRIO
+   ============================== */
+
+form {
+  margin-top: var(--espaco-6);
+}
+
+fieldset {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-5);
+  margin-bottom: var(--espaco-5);
+}
+
+legend {
+  color: var(--cor-primaria-escura);
+  font-weight: bold;
+  font-size: var(--fonte-media);
+  padding: 0 var(--espaco-2);
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: var(--espaco-3);
+  margin-top: var(--espaco-1);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--espaco-2);
+  font-size: var(--fonte-base);
+  background-color: var(--cor-branco);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--cor-secundaria);
+  border-color: var(--cor-primaria);
+}
+
+input:valid,
+select:valid {
+  border-color: #2e7d32;
+}
+
+input:invalid:not(:placeholder-shown),
+select:invalid {
+  border-color: #c62828;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: var(--espaco-2);
+}
+
+button {
+  padding: var(--espaco-3) var(--espaco-5);
+  margin-right: var(--espaco-2);
+  border: none;
+  border-radius: var(--raio-borda);
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  font-size: var(--fonte-base);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+button:focus {
+  outline: 3px solid var(--cor-secundaria);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: var(--cor-texto-suave);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ==============================
+   AÇÕES DO FORMULÁRIO
+   ============================== */
+
+.acoes-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--espaco-3);
+  flex-wrap: wrap;
+}
+
+/* ==============================
+   FEEDBACK E MICROINTERAÇÕES
+   ============================== */
+
+.badge {
+  display: inline-block;
+  padding: var(--espaco-1) var(--espaco-3);
+  margin-right: var(--espaco-2);
+  border-radius: 20px;
+  font-size: var(--fonte-pequena);
+  font-weight: bold;
+}
+
+.badge-ativo {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge-novo {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria-escura);
+}
+
+.alerta {
+  padding: var(--espaco-4);
+  margin: var(--espaco-4) 0;
+  border-radius: var(--raio-borda);
+  border-left: 5px solid;
+}
+
+.alerta-sucesso {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+  color: #1b5e20;
+}
+
+.alerta-aviso {
+  background-color: #fff3e0;
+  border-color: #ef6c00;
+  color: #e65100;
+}
+
+.toast {
+  max-width: 400px;
+  margin: var(--espaco-5) auto;
+  padding: var(--espaco-4);
+  background-color: var(--cor-primaria-escura);
+  color: var(--cor-branco);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+footer {
+  background-color: var(--cor-primaria-escura);
+  color: var(--cor-branco);
+  text-align: center;
+  padding: var(--espaco-5);
+}
+
+footer p {
+  margin: 0;
+  font-size: var(--fonte-pequena);
+}
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+/* Telas muito grandes */
+@media (min-width: 1400px) {
+  main {
+    max-width: 1300px;
+  }
+
+  section {
+    padding: var(--espaco-7);
+  }
+}
+
+/* Desktops */
+@media (max-width: 1200px) {
+  main {
+    padding: var(--espaco-6) var(--espaco-5);
+  }
+}
+
+/* Tablets grandes */
+@media (max-width: 992px) {
+  main {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  section {
+    grid-column: 1 / -1;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Tablets pequenos */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    padding: var(--espaco-5) var(--espaco-4);
+  }
+
+  section {
+    padding: var(--espaco-5);
+  }
+
+  nav ul {
+    gap: var(--espaco-3);
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+  main {
+    display: block;
+    padding: var(--espaco-5) var(--espaco-3);
+  }
+
+  header {
+    padding: var(--espaco-5) var(--espaco-4);
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Botão hambúrguer */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Menu principal fechado */
+  nav .menu-principal {
+    display: none;
+    flex-direction: column;
+    gap: var(--espaco-2);
+    margin-top: var(--espaco-3);
+  }
+
+  /* Abre o menu ao focar/interagir */
+  nav:focus-within .menu-principal {
+    display: flex;
+  }
+
+  /* Submenu no celular */
+  .submenu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .item-dropdown:focus-within .submenu {
+    display: flex;
+  }
+
+  section {
+    padding: var(--espaco-5);
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .acoes-formulario {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: var(--espaco-2);
+  }
+}
+
+/* Feedback visual da validação do formulário */
+
+.campo-valido {
+    border: 2px solid #2e7d32 !important;
+}
+
+.campo-invalido {
+    border: 2px solid #c62828 !important;
+}
+
+.mensagem-erro {
+    display: block;
+    margin-top: 0.25rem;
+    color: #c62828;
+    font-size: 0.875rem;
+}
