@@ -539,3 +539,13 @@ footer p {
     color: #c62828;
     font-size: 0.875rem;
 }
+
+/* Destaque de foco para navegação pelo teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
