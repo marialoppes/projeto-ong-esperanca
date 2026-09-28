@@ -549,3 +549,22 @@ textarea:focus-visible {
     outline: 3px solid var(--cor-destaque);
     outline-offset: 3px;
 }
+
+/* Link de salto para navegação pelo teclado */
+.skip-link {
+    position: absolute;
+    top: var(--espaco-2);
+    left: var(--espaco-2);
+    z-index: 1000;
+    padding: var(--espaco-3) var(--espaco-5);
+    background-color: var(--cor-branco);
+    color: var(--cor-primaria-escura);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-borda);
+    font-weight: bold;
+    transform: translateY(-150%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
