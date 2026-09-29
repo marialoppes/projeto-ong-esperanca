@@ -40,6 +40,44 @@
 }
 
 /* ==============================
+   TEMAS: ESCURO E ALTO CONTRASTE
+   ============================== */
+
+/* Modo escuro */
+body[data-aparencia="escuro"] {
+    color-scheme: dark;
+
+    --cor-primaria: #9d174d;
+    --cor-primaria-escura: #6b1238;
+    --cor-secundaria: #f9a8d4;
+    --cor-destaque: #ffb4d2;
+
+    --cor-fundo: #121212;
+    --cor-fundo-claro: #1e1e1e;
+    --cor-texto: #f5f5f5;
+    --cor-texto-suave: #d0d0d0;
+    --cor-borda: #777777;
+    --cor-branco: #ffffff;
+}
+
+/* Alto contraste */
+body[data-aparencia="alto-contraste"] {
+    color-scheme: light;
+
+    --cor-primaria: #000000;
+    --cor-primaria-escura: #000000;
+    --cor-secundaria: #ffeb00;
+    --cor-destaque: #0000cc;
+
+    --cor-fundo: #ffffff;
+    --cor-fundo-claro: #ffffff;
+    --cor-texto: #000000;
+    --cor-texto-suave: #111111;
+    --cor-borda: #000000;
+    --cor-branco: #ffffff;
+}
+
+/* ==============================
    CONFIGURAÇÕES GERAIS
    ============================== */
 
@@ -567,4 +605,300 @@ textarea:focus-visible {
 
 .skip-link:focus {
     transform: translateY(0);
+}
+
+/* ==============================
+   CONTROLES DE APARÊNCIA
+   ============================== */
+
+.controles-aparencia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-2);
+    flex-wrap: wrap;
+    margin: var(--espaco-3) 0 var(--espaco-4);
+}
+
+.controles-aparencia button {
+    width: auto;
+    margin: 0;
+    padding: var(--espaco-2) var(--espaco-3);
+    border: 2px solid var(--cor-branco);
+    border-radius: var(--raio-borda);
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-branco);
+    font-size: var(--fonte-pequena);
+}
+
+.controles-aparencia button[aria-pressed="true"] {
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+.controles-aparencia button:hover {
+    filter: brightness(1.15);
+}
+
+/* Ajustes de leitura no modo escuro */
+body[data-aparencia="escuro"] section h2,
+body[data-aparencia="escuro"] legend,
+body[data-aparencia="escuro"] main a {
+    color: #ffb4d2;
+}
+
+body[data-aparencia="escuro"] main a:hover,
+body[data-aparencia="escuro"] main a:focus {
+    color: #ffffff;
+}
+
+body[data-aparencia="escuro"] input,
+body[data-aparencia="escuro"] select {
+    background-color: #292929;
+    color: #ffffff;
+    border-color: #aaaaaa;
+}
+
+body[data-aparencia="escuro"] input::placeholder {
+    color: #d0d0d0;
+}
+
+body[data-aparencia="escuro"] .controles-aparencia button {
+    background-color: #292929;
+    border-color: #f5f5f5;
+}
+
+/* Ajustes para alto contraste */
+body[data-aparencia="alto-contraste"] header,
+body[data-aparencia="alto-contraste"] footer,
+body[data-aparencia="alto-contraste"] .submenu {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body[data-aparencia="alto-contraste"] nav a,
+body[data-aparencia="alto-contraste"] footer,
+body[data-aparencia="alto-contraste"] footer p {
+    color: #ffffff;
+}
+
+body[data-aparencia="alto-contraste"] section,
+body[data-aparencia="alto-contraste"] address,
+body[data-aparencia="alto-contraste"] fieldset {
+    border: 2px solid #000000;
+    box-shadow: none;
+}
+
+body[data-aparencia="alto-contraste"] section h2,
+body[data-aparencia="alto-contraste"] legend,
+body[data-aparencia="alto-contraste"] main a {
+    color: #0000cc;
+}
+
+body[data-aparencia="alto-contraste"] input,
+body[data-aparencia="alto-contraste"] select {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body[data-aparencia="alto-contraste"] button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+body[data-aparencia="alto-contraste"] button:hover,
+body[data-aparencia="alto-contraste"] nav a:hover,
+body[data-aparencia="alto-contraste"] nav a:focus {
+    background-color: #ffeb00;
+    color: #000000;
+}
+
+body[data-aparencia="alto-contraste"] .controles-aparencia button[aria-pressed="true"] {
+    outline: 4px solid #ffeb00;
+    outline-offset: 2px;
+}
+
+/* Foco bem visível nos temas acessíveis */
+body[data-aparencia="alto-contraste"] a:focus-visible,
+body[data-aparencia="alto-contraste"] button:focus-visible,
+body[data-aparencia="alto-contraste"] input:focus-visible,
+body[data-aparencia="alto-contraste"] select:focus-visible,
+body[data-aparencia="alto-contraste"] textarea:focus-visible {
+    outline: 4px solid #ffeb00;
+    outline-offset: 3px;
+}
+
+/* Mantém os controles confortáveis em celulares */
+@media (max-width: 600px) {
+    .controles-aparencia {
+        gap: var(--espaco-2);
+    }
+
+    .controles-aparencia button {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* ==============================
+   ÍCONES DE APARÊNCIA NO CABEÇALHO
+   ============================== */
+
+header {
+    position: relative;
+    padding-top: 4.5rem;
+}
+
+.controles-aparencia {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    z-index: 20;
+}
+
+.controles-aparencia button {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Dica de texto ao passar o mouse ou usar o teclado */
+.controles-aparencia button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: max-content;
+    max-width: 180px;
+    padding: 6px 10px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.3;
+    white-space: normal;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 30;
+}
+
+.controles-aparencia button:hover::after,
+.controles-aparencia button:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* O ícone selecionado fica destacado */
+.controles-aparencia button[aria-pressed="true"] {
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+/* Ajuste de posicionamento para telas pequenas */
+@media (max-width: 600px) {
+    header {
+        padding-top: 4.5rem;
+    }
+
+    .controles-aparencia {
+        top: 10px;
+        left: 10px;
+    }
+
+    .controles-aparencia button {
+        width: 38px;
+        height: 38px;
+        font-size: 1.35rem;
+    }
+}
+
+/* ==============================
+   AJUSTES FINAIS DE CONTRASTE
+   ============================== */
+
+/* Mensagens no modo escuro */
+body[data-aparencia="escuro"] .badge-ativo {
+    background-color: #173d25;
+    color: #d6f5dc;
+}
+
+body[data-aparencia="escuro"] .badge-novo {
+    background-color: #6b1238;
+    color: #ffffff;
+}
+
+body[data-aparencia="escuro"] .alerta-sucesso {
+    background-color: #173d25;
+    border-color: #78d994;
+    color: #e1f8e6;
+}
+
+body[data-aparencia="escuro"] .alerta-aviso {
+    background-color: #3a2b08;
+    border-color: #ffcf4a;
+    color: #fff0b3;
+}
+
+body[data-aparencia="escuro"] .mensagem-erro {
+    color: #ff9e9e;
+}
+
+/* Mensagens no alto contraste */
+body[data-aparencia="alto-contraste"] .badge-ativo,
+body[data-aparencia="alto-contraste"] .badge-novo {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body[data-aparencia="alto-contraste"] .alerta-sucesso {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    color: #000000;
+}
+
+body[data-aparencia="alto-contraste"] .alerta-aviso {
+    background-color: #ffeb00;
+    border: 3px solid #000000;
+    color: #000000;
+}
+
+body[data-aparencia="alto-contraste"] .mensagem-erro {
+    padding: 0.25rem;
+    background-color: #ffeb00;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Foco visível: alto contraste em fundos claros */
+body[data-aparencia="alto-contraste"] main a:focus-visible,
+body[data-aparencia="alto-contraste"] input:focus-visible,
+body[data-aparencia="alto-contraste"] select:focus-visible,
+body[data-aparencia="alto-contraste"] textarea:focus-visible {
+    outline: 4px solid #000000;
+    outline-offset: 3px;
+}
+
+/* Foco nos botões escuros do cabeçalho */
+body[data-aparencia="alto-contraste"] header button:focus-visible {
+    outline: 4px solid #ffeb00;
+    outline-offset: 3px;
 }
