@@ -11,6 +11,37 @@
   <a class="skip-link" href="#app">Pular para o conteúdo principal</a>
   <header>
     <h1>ONG Esperança</h1>
+    <div class="controles-aparencia" role="group" aria-label="Opções de aparência">
+      <button
+        type="button"
+        data-aparencia="padrao"
+        aria-label="Ativar aparência padrão"
+        aria-pressed="true"
+        title="Aparência padrão"
+        data-tooltip="Aparência padrão">
+        ☀
+      </button>
+
+      <button
+        type="button"
+        data-aparencia="escuro"
+        aria-label="Ativar modo escuro"
+        aria-pressed="false"
+        title="Modo escuro"
+        data-tooltip="Modo escuro">
+        ☾
+      </button>
+
+      <button
+        type="button"
+        data-aparencia="alto-contraste"
+        aria-label="Ativar alto contraste"
+        aria-pressed="false"
+        title="Alto contraste"
+        data-tooltip="Alto contraste">
+        ◐
+      </button>
+    </div>
       <nav aria-label="Navegação principal">
         <button class="menu-toggle" type="button" aria-label="Abrir menu">
         ☰
@@ -48,5 +79,6 @@
   <main id="app" tabindex="-1"></main>
   <footer><p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p></footer>
   <script type="module" src="../js/router.js"></script>
+  <script src="../js/aparencia.js"></script>
 </body>
 </html>
